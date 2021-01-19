@@ -2,18 +2,7 @@ This directory contains a working Docker image with ROS2 Foxy and Navigation2 fo
 
 ### Install
 
-Clone the repository to ~/navigation2
-
-```
-$ cd ~
-$ git clone <repo-url> navigation2
-```
-
-You can also clone it anywhere and just create a symlink:
-
-```
-$ ln -s <path to clones navigation 2> ~/navigation2
-```
+Make sure you followed the sym-link instructions in the main README.
 
 ## Mac OS Setup
 
