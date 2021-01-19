@@ -2,18 +2,7 @@ This repository contains a working Docker image with ROS2 Foxy and Navigation2 f
 
 ## Instructions:
 
-Clone this repository to wherever you like to keep your Git Repos. Example:
-
-```
-$ git clone <repo url> ~/repositories/husky-nav2
-```
-
-Then sym-link the nav2 and husky folders:
-
-```
-$ ln -s ~/repositories/husky-nav2/husky ~/husky
-$ ln -s ~/repositories/husky-nav2/navigation2 ~/navigation2
-```
+Clone this repository and then follow the instructions for the individual enviroments.
 
 ### ROS2 Foxy and Navigation2
 

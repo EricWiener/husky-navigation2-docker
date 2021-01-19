@@ -1,8 +1,4 @@
-This directory contains a working Docker image with ROS2 Foxy and Navigation2 for both Mac OS (with VNC) and all other systems.
-
-### Install
-
-Make sure you followed the sym-link instructions in the main README.
+This directory contains a Dockerfile with ROS2 Foxy and Navigation2 for both Mac OS (with VNC) and all other systems. It also contains a ROS1 Melodic and Husky Dockerfile for both Mac OS (with VNC) and all other systems.
 
 ## Mac OS Setup
 

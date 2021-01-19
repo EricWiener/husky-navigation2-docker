@@ -1,9 +1,5 @@
 This directory contains a working Docker image with ROS1 Melodic and Husky for both Mac OS (with VNC) and all other systems.
 
-### Install
-
-Make sure you followed the sym-link instructions in the main README.
-
 ## Mac OS Setup
 
 To use the docker image and get visuals with Mac OS, you will need to use a VNC server.
