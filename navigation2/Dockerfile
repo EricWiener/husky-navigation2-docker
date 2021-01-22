@@ -9,7 +9,7 @@ FROM $fromcontainer
 ARG rosversion
 
 # Install linux packages
-RUN apt update && apt install -y python3-pip
+RUN apt update && apt install -y python3-pip iputils-ping
 
 # Install navigation2
 RUN apt install "ros-${rosversion}-navigation2" "ros-${rosversion}-nav2-bringup" "~ros-${rosversion}-turtlebot3-.*" -y

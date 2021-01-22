@@ -24,7 +24,7 @@ You can now view your desktop by browsing to http://127.0.0.1:6080/
 ### Build the Docker container (Docker needs to be installed):
 
 ```
-docker build --build-arg fromcontainer=osrf/ros2:foxy-desktop -t ros2-nav2 .
+docker build --build-arg fromcontainer=osrf/ros:foxy-desktop -t ros2-nav2 .
 ```
 
 ### Run the Docker container
@@ -55,3 +55,7 @@ $ docker stop nav-foxy
 ```
 $ docker stop nav-foxy && docker rm nav-foxy
 ```
+
+### To enable networking and access ROS topics from outside the docker image
+
+Add `--network="host"` to the `docker run` command.
