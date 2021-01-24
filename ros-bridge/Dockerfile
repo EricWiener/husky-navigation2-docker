@@ -18,8 +18,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-noetic-rospy-tutorials=0.10.2-1* \
     && rm -rf /var/lib/apt/lists/*
 
-RUN apt update && apt install -y ros-noetic-husky-desktop
-
 # install ros2 packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-foxy-ros1-bridge=0.9.6-1* \
