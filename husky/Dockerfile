@@ -9,7 +9,7 @@ FROM $fromcontainer
 ARG rosversion
 
 # Install linux packages
-RUN apt update && apt install -y python3-pip "ros-${rosversion}-husky-desktop" "ros-${rosversion}-husky-simulator"
+RUN apt-get update && apt-get install -y python3-pip vim wget "ros-${rosversion}-husky-desktop" "ros-${rosversion}-husky-simulator"
 
 # Switch to the ubuntu user
 WORKDIR /home/ubuntu
