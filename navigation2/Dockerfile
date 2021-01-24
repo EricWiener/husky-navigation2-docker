@@ -9,10 +9,10 @@ FROM $fromcontainer
 ARG rosversion
 
 # Install linux packages
-RUN apt update && apt install -y python3-pip
+RUN apt-get update && apt-get install -y python3-pip vim wget
 
 # Install navigation2
-RUN apt install "ros-${rosversion}-navigation2" "ros-${rosversion}-nav2-bringup" "~ros-${rosversion}-turtlebot3-.*" -y
+RUN apt-get install "ros-${rosversion}-navigation2" "ros-${rosversion}-nav2-bringup" "~ros-${rosversion}-turtlebot3-.*" -y
 
 # Switch to the ubuntu user
 WORKDIR /home/ubuntu
