@@ -1,6 +1,0 @@
-Build:
-docker build -t ros-bridge-tutorial .
-
-Run:
-docker run -dt --name bridge-tut --restart unless-stopped -v ~/ros-bridge-tutorial:/home/ubuntu/catkin_ws ros-bridge-tutorial
-docker exec -it bridge-tut bash
