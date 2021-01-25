@@ -5,6 +5,12 @@ FROM ros:foxy-ros-base-focal
 # Remove ROS entrypoint from parent image
 ENTRYPOINT []
 
+# Unsource any ROS variables
+RUN unset "${!ROS@}"
+
+# Remove ros_entrypoint.sh
+RUN rm /ros_entrypoint.sh
+
 # setup keys
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 
@@ -31,11 +37,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN mkdir -p /catkin_ws/src
 WORKDIR /catkin_ws/src
 RUN git clone https://github.com/EricWiener/ros-melodic-listener.git
+RUN git clone --single-branch --branch noetic-devel https://github.com/husky/husky.git
 
 # Install the bridge from source
 RUN mkdir -p /colcon_ws/src
 WORKDIR /colcon_ws/src
 RUN git clone https://github.com/ros2/ros1_bridge.git
-RUN git clone --single-branch --branch noetic-devel https://github.com/husky/husky.git
 
 CMD ["/bin/bash"]
