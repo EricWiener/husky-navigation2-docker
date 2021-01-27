@@ -1,5 +1,8 @@
 This directory contains a working Docker image with ROS1 Melodic and Husky for both Mac OS (with VNC) and all other systems.
 
+## Onboard-Husky Setup
+To use the docker image on the actual Husky you need 
+
 ## Mac OS Setup
 
 To use the docker image and get visuals with Mac OS, you will need to use a VNC server.
@@ -13,7 +16,7 @@ $ docker build --build-arg fromcontainer=tiryoh/ros-desktop-vnc:melodic -t ros-h
 ### Run the Docker container
 
 ```
-$ docker run -p 6080:80 --shm-size=512m --name husky-melodic --restart unless-stopped -v ~/husky:/home/ubuntu/husky ros-husky-vnc
+$ docker run -p 6080:80 --shm-size=512m --name husky-melodic --restart unless-stopped -v ~/husky:/home/ubuntu/catkin_ws ros-husky-vnc
 $ docker exec -it husky-melodic bash
 ```
 
@@ -30,7 +33,7 @@ docker build --build-arg fromcontainer=osrf/ros:melodic-desktop -t ros-husky .
 ### Run the Docker container
 
 ```
-$ docker run -dt --name husky-melodic --restart unless-stopped -v ~/husky:/home/ubuntu/husky ros-husky
+$ docker run -dt --name husky-melodic --restart unless-stopped -v ~/husky:/home/ubuntu/catkin_ws ros-husky
 $ docker exec -it husky-melodic bash
 ```
 

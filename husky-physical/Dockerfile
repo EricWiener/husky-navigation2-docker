@@ -9,13 +9,18 @@ FROM $fromcontainer
 ARG rosversion
 
 # Install linux packages
-RUN apt update && apt install -y python3-pip "ros-${rosversion}-husky-desktop" "ros-${rosversion}-husky-simulator"
+RUN apt-get update && apt-get install -y python3-pip \
+     vim wget iputils-ping \
+    "ros-${rosversion}-husky-desktop" \
+    "ros-${rosversion}-husky-simulator" \
+    "ros-${rosversion}-navigation" \
+    "ros-${rosversion}-realsense2-camera"
 
 # Switch to the ubuntu user
 WORKDIR /home/ubuntu
 
 # Configure our volumes and ensure the shared volumes have proper ownership
-VOLUME ["/home/ubuntu/husky"]
+VOLUME ["/home/ubuntu/catkin_ws"]
 
 # Update .bashrc
 RUN echo "### BEGIN UBUNTU ENV BLOCK ###" >> ~/.bashrc
