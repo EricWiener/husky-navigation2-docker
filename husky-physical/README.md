@@ -65,3 +65,9 @@ $ docker stop husky-melodic
 ```
 $ docker stop husky-melodic && docker rm husky-melodic
 ```
+
+### To visualize the point cloud from the RealSense
+Run the following and then open RViz in a seperate terminal.
+```
+$ roslaunch realsense2_camera rs_camera.launch filters:=pointcloud
+```

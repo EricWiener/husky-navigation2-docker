@@ -14,7 +14,10 @@ RUN apt-get update && apt-get install -y python3-pip \
     "ros-${rosversion}-husky-desktop" \
     "ros-${rosversion}-husky-simulator" \
     "ros-${rosversion}-navigation" \
-    "ros-${rosversion}-realsense2-camera"
+    "ros-${rosversion}-realsense2-camera" \
+    "ros-${rosversion}-depthimage-to-laserscan" \
+    "ros-${rosversion}-rtabmap-ros" \
+    "ros-${rosversion}-octomap-rviz-plugins"
 
 # Switch to the ubuntu user
 WORKDIR /home/ubuntu
