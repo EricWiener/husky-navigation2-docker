@@ -30,11 +30,37 @@ You can now view your desktop by browsing to http://127.0.0.1:6080/
 docker build --build-arg fromcontainer=osrf/ros:melodic-desktop -t ros-husky .
 ```
 
-### Run the Docker container
+### Initial setup
+You need to perform a one-time setup on the Husky to allow the Docker container to work.
 
+First you need to allow the Docker container to use X11 (for GUI):
 ```
-$ docker run -dt --name husky-melodic --restart unless-stopped -v ~/husky:/home/ubuntu/catkin_ws ros-husky
+$ xhost +local:docker
+```
+
+### Run the Docker container
+You now need to run the Docker container.
+```
+$ docker run -dt --name husky-melodic \
+  --restart unless-stopped \
+  -e DISPLAY=unix$DISPLAY \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -v /etc/localtime:/etc/localtime:ro \
+  --device /dev/dri 
+  --privileged
+  -v ~/husky:/home/ubuntu/catkin_ws ros-husky
 $ docker exec -it husky-melodic bash
+```
+
+To briefly summarize what the flags are doing:
+- `--name husky-melodic`: this names the Docker container
+- `-v ~/husky:/home/ubuntu/catkin_ws ros-husky`: creates a bind mount that allows you to edit files locally and have them synced with the Docker container.
+
+The following enables the Docker container to use GUI applications.
+```
+-e DISPLAY=:0 \
+-v /tmp/.X11-unix:/tmp/.X11-unix \
+-v /etc/localtime:/etc/localtime:ro \
 ```
 
 ## Common
