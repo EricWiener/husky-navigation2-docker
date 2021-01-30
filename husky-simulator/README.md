@@ -62,3 +62,6 @@ $ docker stop husky-melodic && docker rm husky-melodic
 ### To enable networking and access ROS topics from outside the docker image
 
 Add `--network="host"` to the `docker run` command.
+
+## Other
+You can use `install_local.sh` to quickly install the required packages on a local computer.
