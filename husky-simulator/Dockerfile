@@ -14,8 +14,12 @@ RUN apt-get update && apt-get install -y python3-pip \
     "ros-${rosversion}-husky-desktop" \
     "ros-${rosversion}-husky-simulator" \
     "ros-${rosversion}-navigation" \
+    "ros-${rosversion}-husky-gazebo" \
+    "ros-${rosversion}-husky-viz" \
+    "ros-${rosversion}-husky-navigation"
 
 # Switch to the ubuntu user
+RUN mkdir -p /home/ubuntu
 WORKDIR /home/ubuntu
 
 # Configure our volumes and ensure the shared volumes have proper ownership
