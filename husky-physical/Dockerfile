@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -y python3-pip \
     "ros-${rosversion}-realsense2-camera" \
     "ros-${rosversion}-depthimage-to-laserscan" \
     "ros-${rosversion}-rtabmap-ros" \
-    "ros-${rosversion}-octomap-rviz-plugins"
+    "ros-${rosversion}-octomap-rviz-plugins" \
+    "ros-${rosversion}-husky-navigation"
 
 # Switch to the ubuntu user
 WORKDIR /home/ubuntu
